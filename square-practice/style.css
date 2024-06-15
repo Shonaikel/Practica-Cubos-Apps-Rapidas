@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    margin: 100px;
+    padding: 30px;   
+}
+
+/* Estilos de las cajas */
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.red {background-color: rgb(218, 68, 68);}
+.green {background-color: rgb(110, 219, 110);}
+.purple {background-color: rgb(208, 111, 208);}
+
+/* ------------------- Sección 1: Cuadros en línea ------------------- */
+
+.section1 .box {
+    display: inline-block;
+}
+
+/* ----------------- Sección 2: Cuadros en diagonal ------------------ */
+.section2 .container {
+    position: relative;
+    height: 400px;
+}
+
+.section2 .red {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section2 .green {
+    position: absolute;
+    top: 123px;
+    left: 123px;
+}
+
+.section2 .purple {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+/* ----------------- Sección 3: Animaciones en hover ---------------- */
+.section3 .red:hover {
+    width: 100px;
+}
+
+.section3 .green:hover {
+    transform: translateX(50px);
+}
+
+.section3 .purple:hover {
+    background-color: yellow;
+}
+
+/* ---------- Sección 4: Cuadros centrados y responsive ---------- */
+.section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section4 .box {
+    margin: 0 30px; /* Espaciado entre cuadros */
+}
+
+@media (max-width: 600px) {
+    .section4 {
+        flex-direction: column;
+    }
+    .section4 .box {
+        width: 100%;
+        height: 100px; /* Tamaño más delgado en pantallas móviles */
+    }
+}
+
+/* - Sección 5: Cuadros centrados y responsive a saltar de línea - */
+.section5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section5 .box {
+    flex: 0 0 100px;
+}
+
+/* ----------- Sección 6: Layout con header y sidebar ----------- */
+.section6 {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.header {
+    background-color: rgb(218, 68, 68);
+    width: 1200px;
+    height: 500px;
+    padding: 50px;
+}
+
+.sidebar {
+    background-color: rgb(110, 219, 110);
+    width: 200px;
+    height: 500px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    background-color: rgb(208, 111, 208);
+    width: 1000px;
+    height: 250px;
+}
+
+.content-pair {
+    display: flex;
+}
+
+.content-back{
+    flex-shrink: 0;
+}
+
+.scroll-box {
+    background-color: yellow;
+    width: 1000px;
+    height: 250px;
+   
+    
+}
